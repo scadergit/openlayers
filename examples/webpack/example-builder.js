@@ -296,7 +296,7 @@ export default class ExampleBuilder {
   cloakSource(source, cloak) {
     if (cloak) {
       for (const entry of cloak) {
-        source = source.replaceAll(entry.key, entry.value);
+        source = source.replace(`/${entry.key}/g`, entry.value);
       }
     }
     return source;
